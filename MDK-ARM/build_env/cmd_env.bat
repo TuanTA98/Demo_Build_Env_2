@@ -20,6 +20,10 @@
     call cmd_build.bat
 ) else if %cmd% == clean (
     call cmd_clean.bat
+
+) else if %cmd% == ts_list (
+    call cmd_ts_list.bat
+
 ) else (
     echo The command is not correct!
 )
