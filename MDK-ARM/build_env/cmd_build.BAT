@@ -1,4 +1,5 @@
 @echo off
+SETLOCAL
 
 SET CPU_TYPE=STM32F103C8
 SET CPU_VENDOR=STMicroelectronics
@@ -60,3 +61,5 @@ REM Create hex file
 %KEIL_FROMELF% "..\output\STM32_WP.axf" --i32combined --output "..\output\STM32_WP.hex"
 
 echo Done!
+
+ENDLOCAL

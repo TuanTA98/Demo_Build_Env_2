@@ -1,4 +1,5 @@
 @echo off
+Title Testing Framework
 
 call local_config.bat
 
