@@ -1,13 +1,27 @@
 @call local_config.bat
 
-@SET cmd=%1
+@SETLOCAL
+
+@REM Check the first argument - command
+@if "%~1"=="" (
+    echo Wrong syntax. Please add the command.
+    exit /b
+)
+
+@SET cmd=%~1
 
 @if %cmd% == build (
-    set "TS=%2"
+    REM Check the second argument - TS
+    if "%~2"=="" (
+        echo Wrong syntax. Please add test suite want to build.
+        exit /b
+    )
+    set "TS=%~2"
     call cmd_build.bat
-)
-
-@if %cmd% == clean (
+) else if %cmd% == clean (
     call cmd_clean.bat
+) else (
+    echo The command is not correct!
 )
 
+@ENDLOCAL
